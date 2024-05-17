@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Яблуко",
+        "img": "../img/foods/foods.png",
+        "shortname": "apple",
+        "description": "Свіже червоне яблуко.",
+        "price": 1
+    },
+    {
+        "id": 2,
+        "name": "Молоко",
+        "img": "../img/foods/foods.png",
+        "shortname": "milk",
+        "description": "Натуральне коров'яче молоко.",
+        "price": 1.5
+    },
+    {
+        "id": 3,
+        "name": "Хліб",
+        "img": "../img/foods/foods.png",
+        "shortname": "bread",
+        "description": "Свіжоспечений пшеничний хліб.",
+        "price": 2
+    },
+    {
+        "id": 4,
+        "name": "Сир",
+        "img": "../img/foods/foods.png",
+        "shortname": "cheese",
+        "description": "Витриманий твердий сир.",
+        "price": 5
+    }
+]

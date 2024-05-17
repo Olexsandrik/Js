@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Електроніка",
+        "img": "./img/categories/electronic.png",
+        "shortname": "electronics",
+        "notes": "Lorem ipsum"
+    },
+    {
+        "id": 2,
+        "name": "Одяг",
+        "img": "./img/categories/things.png",
+        "shortname": "clothing",
+        "notes": "Lorem ipsum"
+    },
+    {
+        "id": 3,
+        "name": "Книги",
+        "img": "./img/categories/book.png",
+        "shortname": "books",
+        "notes": "Lorem ipsum"
+    },
+    {
+        "id": 4,
+        "name": "Їжа",
+        "img": "./img/categories/foods.png",
+        "shortname": "food",
+        "notes": "Lorem ipsum"
+    }
+]

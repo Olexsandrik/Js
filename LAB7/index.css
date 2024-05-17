@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #1a252f;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style-type: none;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .header{
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: burlywood;
+       
+        .logo{
+            background-color: aqua;
+        }
+
+        .container__nav-menu {
+            display: flex;
+            justify-content: space-between;
+
+            min-width: 20%;
+            .item1,.item2{
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+            }
+            .item1:hover,.item2:hover{
+                text-decoration: underline;
+            }
+
+        
+        }
+
+        
+    }
+
+    .section{
+        min-height: 600px;
+        margin: 50px;
+        .catalog_container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            
+        }
+        .category_img{
+            cursor: pointer;
+        }
+    }
+
+    .footer{
+        background-color: burlywood;
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin: 0 20px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #ecf0f1;
+        }
+        
+        .footer-section p, .footer-section ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #ecf0f1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a252f;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+       
+
+
+
+       
+    }
+
+    
+}

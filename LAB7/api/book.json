@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "To Kill a Mockingbird",
+        "img": "./img/book/book.png",
+        "shortname": "mockingbird",
+        "description": "A novel about the serious issues of rape and racial inequality.",
+        "price": 10.99
+    },
+    {
+        "id": 2,
+        "name": "Mein Kampf",
+        "img": "./img/book/book.png",
+        "shortname": "1925",
+        "description": "An autobiographical manifesto by Nazi Party leader Adolf Hitler, outlining his political ideology and future plans for Germany.",
+        "price": 8.99
+    },
+    {
+        "id": 3,
+        "name": "The Great Gatsby",
+        "img": "./img/book/book.png",
+        "shortname": "gatsby",
+        "description": "A novel about the American dream and the roaring twenties.",
+        "price": 12.99
+    },
+    
+    {
+        "id": 4,
+        "name": "Pride and Prejudice",
+        "img": "./img/book/book.png",
+        "shortname": "pride_prejudice",
+        "description": "A romantic novel that charts the emotional development of the protagonist Elizabeth Bennet.",
+        "price": 9.99
+    }
+]
