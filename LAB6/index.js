@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttons = [];
 
    
-    fetch('https://Olexandrik.github.io/Js/LAB6/api/GameSpace.json)
+    fetch('https://Olexandrik.github.io/Js/LAB6/api/GameSpace.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
