@@ -15,9 +15,6 @@ async function fetchDataFromMultipleFiles() {
         return { categoriesData, electronikData,clothingData,BookData,FoodsData};
 }
 
-
-
-
 let specialsLinkInserted = false;
 
 function loadHomePage() {
@@ -70,11 +67,15 @@ async function loadCatalog() {
             const specialsLi = document.createElement('li');
             const specialsLink = document.createElement("a");
             specialsLink.href = '#';
+            
             specialsLink.innerText = 'Specials';
             specialsLi.appendChild(specialsLink);
             specialsLink.style.fontSize = "20px";
             specialsLink.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif";
             specialsLink.style.textUnderlinePosition;
+            specialsLink.classList.add("clickForSubCatalog");
+            
+            
 
             specialsLink.addEventListener("mouseover", function () {
                 this.style.textDecoration = "underline";
@@ -83,14 +84,20 @@ async function loadCatalog() {
                 this.style.textDecoration = "none";
             });
 
-            specialsLink.onclick = (e) => {
-                e.preventDefault();
-                loadRandomCategory();
-            };
+    
+            specialsLink.addEventListener("click", function(){
+               
+                randomSubCategories();
+            })
+
+
+
             container_nav_menu.appendChild(specialsLi);
+          
 
             specialsLinkInserted = true;
         }
+
     } catch (error) {
         console.error('Помилка завантаження каталогу: ', error);
     }
@@ -100,7 +107,6 @@ async function loadSubCategoties(id) {
 
     const content = document.getElementById('content');
     content.innerHTML="";
-   // const mainConent= document.getElementById('content');
     const data = await fetchDataFromMultipleFiles();
     let categories = null;
         
@@ -134,14 +140,11 @@ async function loadSubCategoties(id) {
         }
 
 }
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-
-});
+function randomSubCategories() {
+    const randomId = Math.floor(Math.random() * 4) + 1;
+    console.log(`Random category ID selected: ${randomId}`);
+    loadSubCategoties(randomId.toString());
+}
 
     
     
