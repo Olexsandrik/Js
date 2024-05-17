@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttons = [];
 
    
-    fetch('http://example.com/api/GameSpace.json')
+    fetch('api/GameSpace.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
