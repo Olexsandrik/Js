@@ -1,0 +1,8 @@
+@import "normalize.css";
+@import "index.header.partial.css";
+@import "index.section.slider.partial.css";
+img{
+    width: 100%;
+}
+
+
