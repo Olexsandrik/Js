@@ -1,8 +1,8 @@
 const slidesFirst = [
-    `<div class="slide"><img src="../img/first/baby-yoda.svg" alt="Baby Yoda"></div>`,
-    `<div class="slide"><img src="../img/first/banana.svg" alt="Girl"></div>`,
-    `<div class="slide"><img src="../img/first/girl.svg" alt="Girl"></div>`,
-    `<div class="slide"><img src="../img/first/viking.svg" alt="Viking"></div>`,
+    `<div class="slide"><img src=".../img/first/baby-yoda.svg" alt="Baby Yoda"></div>`,
+    `<div class="slide"><img src=".../img/first/banana.svg" alt="Girl"></div>`,
+    `<div class="slide"><img src=".../img/first/girl.svg" alt="Girl"></div>`,
+    `<div class="slide"><img src=".../img/first/viking.svg" alt="Viking"></div>`,
 ];
 
 const slidesSecond = [
