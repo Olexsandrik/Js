@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Футболка",
-        "img": "../img/partClothing/tshirt.png",
+        "img": "./img/partClothing/tshirt.png",
         "shortname": "tshirt",
         "description": "Комфортна футболка з бавовни.",
         "price": 20
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Джинси",
-        "img": "../img/partClothing/jeanse.png",
+        "img": "./img/partClothing/jeanse.png",
         "shortname": "jeans",
         "description": "Стильні джинси з високоякісного деніму.",
         "price": 50
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Куртка",
-        "img": "../img/partClothing/jacket.png",
+        "img": "./img/partClothing/jacket.png",
         "shortname": "jacket",
         "description": "Тепла куртка для холодної погоди.",
         "price": 80
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "name": "Кросівки",
-        "img": "../img/partClothing/sneakers.png",
+        "img": "./img/partClothing/sneakers.png",
         "shortname": "sneakers",
         "description": "Зручні кросівки для повсякденного носіння.",
         "price": 60
