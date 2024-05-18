@@ -1,15 +1,15 @@
 const slidesFirst = [
-    `<div class="slide"><img src="../img/first/baby-yoda.svg" alt="Baby Yoda"></div>`,
-    `<div class="slide"><img src="../img/first/banana.svg" alt="Girl"></div>`,
-    `<div class="slide"><img src="../img/first/girl.svg" alt="Girl"></div>`,
-    `<div class="slide"><img src="../img/first/viking.svg" alt="Viking"></div>`,
+    `<div class="slide"><img src="./img/first/baby-yoda.svg" alt="Baby Yoda"></div>`,
+    `<div class="slide"><img src="./img/first/banana.svg" alt="Girl"></div>`,
+    `<div class="slide"><img src="./img/first/girl.svg" alt="Girl"></div>`,
+    `<div class="slide"><img src="./img/first/viking.svg" alt="Viking"></div>`,
 ];
 
 const slidesSecond = [
-    `<div class="slide"><img src="../img/second/book.png" alt="book"></div>`,
-    `<div class="slide"><img src="../img/second/electronic.png" alt="electronik"></div>`,
-    `<div class="slide"><img src="../img/second/foods.png" alt="foods"></div>`,
-    `<div class="slide"><img src="../img/second/things.png" alt="things"></div>`,
+    `<div class="slide"><img src="./img/second/book.png" alt="book"></div>`,
+    `<div class="slide"><img src="./img/second/electronic.png" alt="electronik"></div>`,
+    `<div class="slide"><img src="./img/second/foods.png" alt="foods"></div>`,
+    `<div class="slide"><img src="./img/second/things.png" alt="things"></div>`,
 ];
 
 let currentSlideIdx = 0;
