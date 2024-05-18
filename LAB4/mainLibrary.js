@@ -1,30 +1,31 @@
 var SortingLibrary = {
-    pushUndefined: function(array, undefinedCount){
+    pushUndefined: function(array) {
+        let undefinedCount = 0;
         for (let i = 0; i < array.length; i++) {
             if (array[i] === undefined) {
                 undefinedCount++;
                 array.splice(i, 1);
-                i--; 
+                i--;
             }
         }
         array.push(...new Array(undefinedCount).fill(undefined));
-        console.log(`Count of undedined ${undefinedCount}`);
-
+        console.log(`Count of undefined elements: ${undefinedCount}`);
+        return undefinedCount;
     },
-   exchangeSort: function(array, sortOrder) {
+
+    exchangeSort: function(array, sortOrder) {
         let comparisons = 0;
         let exchanges = 0;
-        let undefinedCount = 0; 
 
         const len = array.length;
-       
-        SortingLibrary.pushUndefined(array,undefinedCount);
-        for (let i = 0; i < len - 1; i++) {
-            for (let j = 0; j < len - 1 - i; j++) {
+        let undefinedCount = this.pushUndefined(array);
+
+        for (let i = 0; i < len - undefinedCount - 1; i++) {
+            for (let j = 0; j < len - undefinedCount - 1 - i; j++) {
                 comparisons++;
                 if ((sortOrder === 'asc' && array[j] > array[j + 1]) || (sortOrder === 'desc' && array[j] < array[j + 1])) {
-                    [array[j], array[j + 1]] = [array[j + 1], array[j]];
                     exchanges++;
+                    [array[j], array[j + 1]] = [array[j + 1], array[j]];
                 }
             }
         }
@@ -32,109 +33,90 @@ var SortingLibrary = {
         console.log(`Number of comparisons: ${comparisons}`);
         console.log(`Number of exchanges: ${exchanges}`);
         return array;
-    },    
+    },
 
-   
     minElementSort: function(array, sortOrder) {
         let comparisons = 0;
         let exchanges = 0;
-       let undefinedCount= 0;
-       const len = array.length;
 
-       SortingLibrary.pushUndefined(array,undefinedCount);
+        const len = array.length;
+        let undefinedCount = this.pushUndefined(array);
 
-
-        for (let i = 0; i < len - 1; i++) {
+        for (let i = 0; i < len - undefinedCount - 1; i++) {
             let minIndex = i;
-            comparisons++;
-            for (let j = i + 1; j < len; j++) {
+            for (let j = i + 1; j < len - undefinedCount; j++) {
+                comparisons++;
                 if ((sortOrder === 'asc' && array[j] < array[minIndex]) || (sortOrder === 'desc' && array[j] > array[minIndex])) {
                     minIndex = j;
-                    exchanges++;
                 }
             }
-          
-            let temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
+            if (minIndex !== i) {
+                exchanges++;
+                [array[i], array[minIndex]] = [array[minIndex], array[i]];
+            }
         }
-      
 
         console.log(`Number of comparisons: ${comparisons}`);
         console.log(`Number of exchanges: ${exchanges}`);
         return array;
     },
-
 
     insertionSort: function(array, sortOrder) {
         let comparisons = 0;
         let exchanges = 0;
-        let undefinedCount= 0;
-        const len = array.length;
-        
-        SortingLibrary.pushUndefined(array,undefinedCount);
 
-      
-        
-    
-        for (let i = 1; i < len; i++) {
+        const len = array.length;
+        let undefinedCount = this.pushUndefined(array);
+
+        for (let i = 1; i < len - undefinedCount; i++) {
             let currentValue = array[i];
             let j = i - 1;
-            exchanges++;
-    
+
             while (j >= 0 && ((sortOrder === 'asc' && array[j] > currentValue) || (sortOrder === 'desc' && array[j] < currentValue))) {
                 comparisons++;
                 array[j + 1] = array[j];
                 j--;
             }
-    
             array[j + 1] = currentValue;
-           
+            exchanges++;
         }
-    
+
         console.log(`Number of comparisons: ${comparisons}`);
         console.log(`Number of exchanges: ${exchanges}`);
-    
         return array;
     },
 
-    
     shellSort: function(array, sortOrder) {
         let comparisons = 0;
         let exchanges = 0;
-        let undefinedCount = 0;
+
         const len = array.length;
-        
-        SortingLibrary.pushUndefined(array, undefinedCount);
-    
-        for (let gap = Math.floor(len / 2); gap > 0; gap = Math.floor(gap / 2)) {
-            for (let i = gap; i < len; i++) {
+        let undefinedCount = this.pushUndefined(array);
+
+        for (let gap = Math.floor((len - undefinedCount) / 2); gap > 0; gap = Math.floor(gap / 2)) {
+            for (let i = gap; i < len - undefinedCount; i++) {
                 let temp = array[i];
                 let j = i;
-                exchanges++;
-    
+
                 while (j >= gap && ((sortOrder === 'asc' && array[j - gap] > temp) || (sortOrder === 'desc' && array[j - gap] < temp))) {
+                    comparisons++;
                     array[j] = array[j - gap];
                     j -= gap;
-                    comparisons++;
                 }
-    
                 array[j] = temp;
+                exchanges++;
             }
         }
-    
+
         console.log(`Number of comparisons: ${comparisons}`);
         console.log(`Number of exchanges: ${exchanges}`);
         return array;
     },
 
-    
     quickSort: function(array, sortOrder) {
         let comparisons = 0;
         let exchanges = 0;
-        let undefinedCount = 0;
 
-      
         function partition(arr, low, high) {
             let pivot = arr[high];
             let i = low - 1;
@@ -147,11 +129,10 @@ var SortingLibrary = {
                 }
             }
             [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-          
+            exchanges++;
             return i + 1;
         }
-       
-    
+
         function quickSortHelper(arr, low, high) {
             if (low < high) {
                 let pivotIndex = partition(arr, low, high);
@@ -159,48 +140,41 @@ var SortingLibrary = {
                 quickSortHelper(arr, pivotIndex + 1, high);
             }
         }
-    
-       
-        quickSortHelper(array, 0, array.length - 1);
-        SortingLibrary.pushUndefined(array, undefinedCount);
-    
+
+        let undefinedCount = this.pushUndefined(array);
+        quickSortHelper(array, 0, array.length - undefinedCount - 1);
+
         console.log(`Number of comparisons: ${comparisons}`);
         console.log(`Number of exchanges: ${exchanges}`);
-    
         return array;
     }
-    
-    
 };
 
-const arr = new Array(100);
+// Example usage with non-sparse array
+let arr = Array.from({ length: 100 }, () => Math.floor(Math.random() * 100));
 
-for (let i = 0; i < arr.length; i++) {
-    arr[i] = Math.floor(Math.random() * 100); 
-    if(arr[i]%2==1){
-        arr[i]=undefined;
-    }
-   
-    
-}
+console.log("==== Exchange Sort ====");
+console.log(SortingLibrary.exchangeSort([...arr], "asc"));
+console.log("==== Min Element Sort ====");
+console.log(SortingLibrary.minElementSort([...arr], "asc"));
+console.log("==== Insertion Sort ====");
+console.log(SortingLibrary.insertionSort([...arr], "asc"));
+console.log("==== Shell Sort ====");
+console.log(SortingLibrary.shellSort([...arr], "asc"));
+console.log("==== Quick Sort ====");
+console.log(SortingLibrary.quickSort([...arr], "asc"));
 
+// Example usage with sparse array
+let sparseArr = Array.from({ length: 100 }, () => (Math.random() > 0.5 ? Math.floor(Math.random() * 100) : undefined));
 
+console.log("==== Exchange Sort (Sparse) ====");
+console.log(SortingLibrary.exchangeSort([...sparseArr], "desc"));
+console.log("==== Min Element Sort (Sparse) ====");
+console.log(SortingLibrary.minElementSort([...sparseArr], "desc"));
+console.log("==== Insertion Sort (Sparse) ====");
+console.log(SortingLibrary.insertionSort([...sparseArr], "desc"));
+console.log("==== Shell Sort (Sparse) ====");
+console.log(SortingLibrary.shellSort([...sparseArr], "desc"));
+console.log("==== Quick Sort (Sparse) ====");
+console.log(SortingLibrary.quickSort([...sparseArr], "desc"));
 
-
-// Приклад використання
-console.log("====обміну=====");
-let first= SortingLibrary.exchangeSort(arr,"asc");
-console.log("====мінімальних елементів=====");
-let second= SortingLibrary.minElementSort(arr,"asc");
-console.log("===вставок===");
-let third= SortingLibrary.insertionSort(arr,"asc");
-console.log("===Shell===");
-let fourth= SortingLibrary.shellSort(arr,"asc");
-console.log("===шивде сортування===")
-let fiver = SortingLibrary.quickSort(arr,"asc");
-
-console.log(first);
-console.log(second);
-console.log(third);
-console.log(fourth);
-console.log(fiver);
