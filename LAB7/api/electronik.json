@@ -2,7 +2,7 @@
      {
         "id": 1,
         "name": "Смартфон",
-        "img": "../img/partElectronik/phone.png",
+        "img": "./img/partElectronik/phone.png",
         "shortname": "smartphone",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "price": 500
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Ноутбук",
-        "img": "../img/partElectronik/notebook.png",
+        "img": "./img/partElectronik/notebook.png",
         "shortname": "laptop",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "price": 1000
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Планшет",
-        "img": "../img/partElectronik/tablet.png",
+        "img": "./img/partElectronik/tablet.png",
         "shortname": "tablet",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "price": 300
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "name": "Годинник",
-        "img": "../img/partElectronik/smartwatch.png",
+        "img": "./img/partElectronik/smartwatch.png",
         "shortname": "watch",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "price": 200
