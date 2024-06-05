@@ -1,19 +1,17 @@
-function tringle(element1, type1, element2, type2){
+function triangle(element1, type1, element2, type2){
     const validTypes=["leg", "hypotenuse", "adjacent angle", "opposite angle", "angle"];
-    if(!validTypes.includes(type1)|| !validTypes.includes(type2)){
-        console.log("Не првильно введений тип");
+      if (!validTypes.includes(type1) || !validTypes.includes(type2)) {
+        console.log("Неправильно введений тип");
+        return "failed";
+    }    
+    if (type1 === "hypotenuse" && type2 === "hypotenuse") {
+        console.log("Типи не можуть бути однакові");
         return "failed";
     }
-
-    if(type1==="hypotenuse" && type2==="hypotenuse"){
-        console.log("типи не можуть бути одинакові");
-        return "failed";
+    if (element1 <= 0 || element2 <= 0) {
+        return "Error: значення повинні бути більше нуля";
     }
-    
-
-    let sideA, sideB, hypotenuse, angleA, angleB, leg;
-    if(hypotenuse<0 || leg<0 ||leg<hypotenuse||(hypotenuse || leg<0)) return "Error перегляньте введені дані";
-
+ let sideA, sideB, hypotenuse, angleA, angleB, leg;
     
     if (type1 === "leg" && type2 === "leg") {
         //  обидва елементи - катети
@@ -116,4 +114,4 @@ function tringle(element1, type1, element2, type2){
 
 }
 
-console.log(tringle(10,"leg",5,"leg"));
+console.log(triangle(10,"leg",5,"leg"));
