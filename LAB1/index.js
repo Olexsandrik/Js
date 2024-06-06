@@ -122,6 +122,5 @@ function triangle(element1, type1, element2, type2){
     console.log("beta:", angleB.toFixed(2), "градусів");
 
     return "success";
-
-
 }
+console.log(triangle(10,"leg",5,"leg"));
