@@ -6,7 +6,7 @@ function radToDeg(rad: number): number {
   return (rad * 180) / Math.PI;
 }
 
-// Обмежуємо можливі типи до варіантів з Таблиці 1
+
 type ElementType =
   | "leg"
   | "hypotenuse"
@@ -14,7 +14,6 @@ type ElementType =
   | "opposite angle"
   | "angle";
 
-// Функція triangle
 function triangle(
   value1: number,
   type1: ElementType,
@@ -42,7 +41,7 @@ function triangle(
     (type1 === "leg" && type2 === "hypotenuse") ||
     (type1 === "hypotenuse" && type2 === "leg")
   ) {
-    // Катет + гіпотенуза
+  
     if (type1 === "leg") {
       a = value1;
       c = value2;
